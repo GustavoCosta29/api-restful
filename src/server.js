@@ -13,8 +13,9 @@ db.connect()
 app.use('/api', routes)
 
 
-// habilita o server a receber os dados via POST    
-app.use(express.urlencoded({ extended: true}))
+// habilita o server a receber os dados via JSON 
+app.use(express.json())
+
 
 // executando o servidor
 const port = process.env.port || 8080
