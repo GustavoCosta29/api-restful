@@ -62,7 +62,7 @@ async function remove(req, res) {
 
     const remove = await ProductModel.deleteOne({ _id: id})
 
-    const message = await remove.ok ? 'sucess' : 'error'
+    const message = remove.ok ? 'sucess' : 'error'
 
     res.send({
         message,
