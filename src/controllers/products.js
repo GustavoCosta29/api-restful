@@ -33,7 +33,37 @@ async function post(req, res) {
 
 }
 
+async function put(req, res) {
+    const { id } = req.params
+
+    //método onde vem o dado atualizado
+
+    const product = await ProductModel.findByIdAndUpdate({ _id: id}, req.body, { new: true})
+
+    res.send({
+        message: 'sucess',
+        product,
+    })
+
+    
+
+   
+   
+   
+    /* método para atualizar dados no banco de dados, porem o retorno nao vem atualizado!! 
+    const product = await ProductModel.findOne({ _id: id})
+
+    await product.updateOne(req.body)
+
+    res.send({
+        message: 'sucess',
+        product,
+    }) 
+    */
+}
+
 module.exports = {
     get,
-    post,  
+    post,
+    put,  
 }
