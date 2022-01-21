@@ -27,7 +27,9 @@ async function post(req, res) {
 
     product.save()
 
-    res.send() 
+    res.send({
+        message: 'Cadastrado com sucesso!'
+    }) 
 
 }
 

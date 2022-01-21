@@ -9,12 +9,15 @@ const app = express()
 // conexão com o banco de dados
 db.connect()
 
+// habilita o server a receber os dados via JSON 
+app.use(express.json())
+
+
 // definindo rotas
 app.use('/api', routes)
 
 
-// habilita o server a receber os dados via JSON 
-app.use(express.json())
+
 
 
 // executando o servidor
