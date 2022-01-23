@@ -34,11 +34,8 @@ app.use(cors({
 // habilita o server a receber os dados via JSON 
 app.use(express.json())
 
-
 // definindo rotas
 app.use('/api', routes)
-
-
 
 
 

@@ -28,7 +28,7 @@ async function post(req, res) {
     product.save()
 
     res.send({
-        message: 'Cadastrado com sucesso!'
+        message: 'success'
     }) 
 
 }
@@ -41,7 +41,7 @@ async function put(req, res) {
     const product = await ProductModel.findByIdAndUpdate({ _id: id}, req.body, { new: true})
 
     res.send({
-        message: 'sucess',
+        message: 'success',
         product,
     })
 
@@ -60,10 +60,11 @@ async function put(req, res) {
 async function remove(req, res) {
     const { id } = req.params
 
-    const remove = await ProductModel.deleteOne({ _id: id})
+    const product = await ProductModel.deleteOne({ _id: id})
 
-    const message = remove.ok ? 'sucess' : 'error'
+    const message = product ? 'success' : 'error'
 
+   
     res.send({
         message,
     })
